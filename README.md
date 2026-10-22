@@ -27,7 +27,7 @@ deck/
   images/          the pi screenshots used on slide 13
 ```
 
-Each slide is a 1920 × 1080 HTML fragment with inline styles. The deck was built with Claude's Slides artifact and the Presswerk design system. Its fonts are Jost, Courier Prime and Libre Caslon Text from Google Fonts.
+Each slide is a 1920 × 1080 HTML fragment with inline styles. The deck was built with Claude's Slides artifact and the Formwerk design system: primary inks on cream stock, with geometric shapes and print quirks. Its fonts are Jost, Bitter and Space Mono from Google Fonts.
 
 ## About the numbers
 

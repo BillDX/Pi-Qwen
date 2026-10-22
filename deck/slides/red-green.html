@@ -1,42 +1,42 @@
-<section id="red-green" data-transition="fade" style="display:flex; flex-direction:column; gap:36px; padding:128px 128px 160px; background:#eee6d3">
-  <svg xmlns="http://www.w3.org/2000/svg" aria-label="paper grain" viewBox="0 0 1920 1080" style="position:absolute; top:0; left:0; width:1920px; height:1080px"><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="7"/><feColorMatrix type="matrix" values="0 0 0 0 0.10 0 0 0 0 0.09 0 0 0 0 0.08 1.3 0 0 0 -0.5"/></filter><rect width="1920" height="1080" filter="url(#grain)" opacity="0.35"/></svg>
+<section id="red-green" data-transition="fade" style="display:flex; flex-direction:column; gap:36px; padding:128px 128px 160px; background:#F4EDE0">
+  <svg xmlns="http://www.w3.org/2000/svg" aria-label="Corner ornament: a blue quarter circle in the corner, a red triangle overprinted on its edge and the yellow page-number disc" width="424" height="449" viewBox="1496 631 424 449" style="position:absolute; left:1496px; top:631px; width:424px; height:449px"><circle cx="1920" cy="1080" r="420" fill="#1D4A96"/><polygon points="1710,635 1780,756 1640,756" fill="#C9302C" style="mix-blend-mode:multiply"/><circle cx="1712" cy="999" r="58" fill="#F2B705"/></svg>
   <div style="display:flex; flex-direction:row; gap:24px; align-items:center">
-    <p style="font-family:'Courier Prime', 'Courier New', monospace; font-size:24px; font-weight:700; letter-spacing:5px; text-transform:uppercase; white-space:nowrap; color:#1a1917">Prompting smaller models</p>
-    <div style="display:flex; flex-direction:column; flex:1; border-top:3px solid #1a1917">
-    </div>
+    <p style="font-family:'Space Mono', 'Courier New', monospace; font-size:24px; font-weight:700; letter-spacing:3px; text-transform:uppercase; white-space:nowrap; color:#1A1A1A">Prompting smaller models</p>
+    <div style="display:flex; flex-direction:column; flex:1; border-top:4px solid #1A1A1A">
+    </div><svg aria-label="Formwerk marks: a red circle, a yellow triangle and a blue square" width="104" height="28" viewBox="0 0 104 28" style="width:104px; height:28px"><circle cx="14" cy="14" r="14" fill="#C9302C"/><path d="M52 0 L66 28 L38 28 Z" fill="#F2B705"/><rect x="76" y="0" width="28" height="28" fill="#1D4A96"/></svg>
   </div>
-  <h2 style="font-family:Jost, Arial, sans-serif; font-size:64px; font-weight:800; line-height:0.95; letter-spacing:-1px; text-transform:uppercase; color:#1a1917">Red, then green: tests drive the run</h2>
+  <h2 style="font-family:Jost, Arial, sans-serif; font-size:64px; font-weight:700; line-height:0.95; letter-spacing:-1px; color:#1A1A1A">Red, then green: tests drive the run</h2>
   <div style="display:flex; flex-direction:row; gap:40px; align-items:start">
     <div style="width:760px; display:flex; flex-direction:column; gap:14px">
-      <div style="display:flex; flex-direction:row; gap:20px; align-items:center; padding:16px 24px; background:#c8382a">
-        <p style="width:40px; font-family:Jost, Arial, sans-serif; font-size:34px; font-weight:900; color:#f6f0e3">1</p>
-        <p style="font-family:'Libre Caslon Text', Georgia, serif; font-size:28px; color:#f6f0e3">Write a test that fails</p>
+      <div style="display:flex; flex-direction:row; gap:20px; align-items:center; padding:16px 24px; background:#C9302C">
+        <p style="width:40px; font-family:Jost, Arial, sans-serif; font-size:34px; font-weight:800; color:#F4EDE0">1</p>
+        <p style="font-family:Bitter, Georgia, serif; font-size:28px; color:#F4EDE0">Write a test that fails</p>
       </div>
-      <div style="display:flex; flex-direction:row; gap:20px; align-items:center; padding:16px 24px; background:#c8382a">
-        <p style="width:40px; font-family:Jost, Arial, sans-serif; font-size:34px; font-weight:900; color:#f6f0e3">2</p>
-        <p style="font-family:'Libre Caslon Text', Georgia, serif; font-size:28px; color:#f6f0e3">Watch it fail, for the right reason (red)</p>
+      <div style="display:flex; flex-direction:row; gap:20px; align-items:center; padding:16px 24px; background:#C9302C">
+        <p style="width:40px; font-family:Jost, Arial, sans-serif; font-size:34px; font-weight:800; color:#F4EDE0">2</p>
+        <p style="font-family:Bitter, Georgia, serif; font-size:28px; color:#F4EDE0">Watch it fail, for the right reason (red)</p>
       </div>
-      <div style="display:flex; flex-direction:row; gap:20px; align-items:center; padding:16px 24px; background:#f6f0e3; border:3px solid #1a1917">
-        <p style="width:40px; font-family:Jost, Arial, sans-serif; font-size:34px; font-weight:900; color:#5a564f">3</p>
-        <p style="font-family:'Libre Caslon Text', Georgia, serif; font-size:28px; color:#1a1917">Make the smallest change</p>
+      <div style="display:flex; flex-direction:row; gap:20px; align-items:center; padding:16px 24px; background:#FBF8F2; border:2px solid #1A1A1A">
+        <p style="width:40px; font-family:Jost, Arial, sans-serif; font-size:34px; font-weight:800; color:#4A4640">3</p>
+        <p style="font-family:Bitter, Georgia, serif; font-size:28px; color:#1A1A1A">Make the smallest change</p>
       </div>
-      <div style="display:flex; flex-direction:row; gap:20px; align-items:center; padding:16px 24px; background:#1f4e9c">
-        <p style="width:40px; font-family:Jost, Arial, sans-serif; font-size:34px; font-weight:900; color:#f6f0e3">4</p>
-        <p style="font-family:'Libre Caslon Text', Georgia, serif; font-size:28px; color:#f6f0e3">Run the whole suite (green)</p>
+      <div style="display:flex; flex-direction:row; gap:20px; align-items:center; padding:16px 24px; background:#1D4A96">
+        <p style="width:40px; font-family:Jost, Arial, sans-serif; font-size:34px; font-weight:800; color:#F4EDE0">4</p>
+        <p style="font-family:Bitter, Georgia, serif; font-size:28px; color:#F4EDE0">Run the whole suite (green)</p>
       </div>
-      <div style="display:flex; flex-direction:row; gap:20px; align-items:center; padding:16px 24px; background:#1f4e9c">
-        <p style="width:40px; font-family:Jost, Arial, sans-serif; font-size:34px; font-weight:900; color:#f6f0e3">5</p>
-        <p style="font-family:'Libre Caslon Text', Georgia, serif; font-size:28px; color:#f6f0e3">Quote the command and output, then commit</p>
+      <div style="display:flex; flex-direction:row; gap:20px; align-items:center; padding:16px 24px; background:#1D4A96">
+        <p style="width:40px; font-family:Jost, Arial, sans-serif; font-size:34px; font-weight:800; color:#F4EDE0">5</p>
+        <p style="font-family:Bitter, Georgia, serif; font-size:28px; color:#F4EDE0">Quote the command and output, then commit</p>
       </div>
     </div>
     <div style="display:flex; flex-direction:column; gap:20px; flex:1">
-      <h3 style="font-family:Jost, Arial, sans-serif; font-size:34px; font-weight:700; color:#1a1917">Why it matters more locally</h3>
-      <p style="font-family:'Libre Caslon Text', Georgia, serif; font-size:26px; line-height:1.4; color:#4a453e">A fix takes a minute or two and a feature three or four, so you will not be watching. While you are away, the tests are the only reviewer.</p>
-      <p style="font-family:'Libre Caslon Text', Georgia, serif; font-size:26px; line-height:1.4; color:#4a453e">On a real bug fix, the model loaded my TDD and verification skills by itself and ran the full suite before it reported.</p>
-      <p style="font-family:'Libre Caslon Text', Georgia, serif; font-size:32px; font-style:italic; line-height:1.35; color:#5a564f">Test Driven Development is key to longer successful runs.</p>
+      <h3 style="font-family:Jost, Arial, sans-serif; font-size:34px; font-weight:700; color:#1A1A1A">Why it matters more locally</h3>
+      <p style="font-family:Bitter, Georgia, serif; font-size:26px; line-height:1.4; color:#4A4640">A fix takes a minute or two and a feature three or four, so you will not be watching. While you are away, the tests are the only reviewer.</p>
+      <p style="font-family:Bitter, Georgia, serif; font-size:26px; line-height:1.4; color:#4A4640">On a real bug fix, the model loaded my TDD and verification skills by itself and ran the full suite before it reported.</p>
+      <p style="font-family:Bitter, Georgia, serif; font-size:32px; font-style:italic; line-height:1.35; color:#4A4640">Test Driven Development is key to longer successful runs.</p>
     </div>
   </div>
-  <p style="position:absolute; bottom:64px; left:128px; width:1360px; font-family:'Courier Prime', 'Courier New', monospace; font-size:24px; color:#5a564f">Task times: medians from five tasks × 3 runs on Qwen3.8-27B through pi. Skills from obra/superpowers.</p>
-  <p style="position:absolute; right:128px; bottom:64px; width:160px; font-family:'Courier Prime', 'Courier New', monospace; font-size:24px; font-weight:700; text-align:right; color:#5a564f">No. 14</p>
+  <p style="position:absolute; bottom:64px; left:128px; width:1360px; font-family:'Space Mono', 'Courier New', monospace; font-size:24px; color:#4A4640">Task times: medians from five tasks × 3 runs on Qwen3.8-27B through pi. Skills from obra/superpowers.</p>
+  <p style="position:absolute; right:128px; bottom:64px; width:160px; font-family:'Space Mono', 'Courier New', monospace; font-size:24px; font-weight:700; text-align:center; color:#1A1A1A; text-transform:uppercase; letter-spacing:1px">No. 14</p>
   <aside>The single most effective practice for a small, slow model is red-green testing, written into its instructions. Write a test that fails. Watch it fail, and check it fails for the right reason. Make the smallest change. Run the whole suite, not just the one test. Then quote the command and its output before claiming anything, and commit. Why does this matter more locally than with Claude Code? Because of the clock. On my setup a bug fix takes a minute or two and a feature three or four, and longer tasks much more. You are not going to sit and watch that, so while you are away the tests are the only reviewer, and the model's own claim that it works is not evidence. I put this in two places: a line in AGENTS.md, and the test-driven-development and verification skills from the superpowers collection. On a real bug fix the model loaded both by itself and ran the full suite before reporting back. It made the run slower, by about a minute, and I think that minute is well spent when nobody is watching.</aside>
 </section>

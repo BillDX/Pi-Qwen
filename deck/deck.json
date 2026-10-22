@@ -17,9 +17,9 @@
     "s9": {"description": "Getting started, links and my configuration", "start": "first-evening"}
   },
   "faces": {
-    "jost": {"family": "Jost", "href": "https://fonts.googleapis.com/css2?family=Jost:wght@500;700;800;900&display=swap"},
-    "courier-prime": {"family": "Courier Prime", "href": "https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap"},
-    "libre-caslon-text": {"family": "Libre Caslon Text", "href": "https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap"}
+    "jost": {"family": "Jost", "href": "https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&display=swap"},
+    "bitter": {"family": "Bitter", "href": "https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,600;0,700;1,400&display=swap"},
+    "space-mono": {"family": "Space Mono", "href": "https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"}
   },
-  "designSystems": [{"title": "Presswerk", "namespace": "presswerk", "artifact": "https://claude.ai/artifact/5TLESkmJ5CBwgUZUefj6M5", "version": "1792622357-5f09", "copiedAt": "2026-10-21T21:30:00Z"}]
+  "designSystems": [{"title": "Formwerk", "namespace": "formwerk", "artifact": "https://claude.ai/artifact/2QNngENZrpsZUPtAsEwULd", "version": "1792644612-9cbc", "copiedAt": "2026-10-21T23:40:00Z"}]
 }

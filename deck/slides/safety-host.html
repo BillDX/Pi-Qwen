@@ -1,43 +1,43 @@
-<section id="safety-host" data-transition="fade" style="display:flex; flex-direction:column; gap:36px; padding:128px 128px 160px; background:#eee6d3">
-  <svg xmlns="http://www.w3.org/2000/svg" aria-label="paper grain" viewBox="0 0 1920 1080" style="position:absolute; top:0; left:0; width:1920px; height:1080px"><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="7"/><feColorMatrix type="matrix" values="0 0 0 0 0.10 0 0 0 0 0.09 0 0 0 0 0.08 1.3 0 0 0 -0.5"/></filter><rect width="1920" height="1080" filter="url(#grain)" opacity="0.35"/></svg>
+<section id="safety-host" data-transition="fade" style="display:flex; flex-direction:column; gap:36px; padding:128px 128px 160px; background:#F4EDE0">
+  <svg xmlns="http://www.w3.org/2000/svg" aria-label="Corner ornament: a red quarter circle in the corner, a tilted blue square overprinted on its edge and the yellow page-number disc" width="270" height="234" viewBox="1650 846 270 234" style="position:absolute; left:1650px; top:846px; width:270px; height:234px"><circle cx="1920" cy="1080" r="230" fill="#C9302C"/><rect x="1746" y="867" width="64" height="64" fill="#1D4A96" transform="rotate(14 1778 899)" style="mix-blend-mode:multiply"/><circle cx="1712" cy="999" r="58" fill="#F2B705"/></svg>
   <div style="display:flex; flex-direction:row; gap:24px; align-items:center">
-    <p style="font-family:'Courier Prime', 'Courier New', monospace; font-size:24px; font-weight:700; letter-spacing:5px; text-transform:uppercase; white-space:nowrap; color:#1a1917">Making pi safe</p>
-    <div style="display:flex; flex-direction:column; flex:1; border-top:3px solid #1a1917">
-    </div>
+    <p style="font-family:'Space Mono', 'Courier New', monospace; font-size:24px; font-weight:700; letter-spacing:3px; text-transform:uppercase; white-space:nowrap; color:#1A1A1A">Making pi safe</p>
+    <div style="display:flex; flex-direction:column; flex:1; border-top:4px solid #1A1A1A">
+    </div><svg aria-label="Formwerk marks: a red circle, a yellow triangle and a blue square" width="104" height="28" viewBox="0 0 104 28" style="width:104px; height:28px"><circle cx="14" cy="14" r="14" fill="#C9302C"/><path d="M52 0 L66 28 L38 28 Z" fill="#F2B705"/><rect x="76" y="0" width="28" height="28" fill="#1D4A96"/></svg>
   </div>
-  <h2 style="font-family:Jost, Arial, sans-serif; font-size:64px; font-weight:800; line-height:0.95; letter-spacing:-1px; text-transform:uppercase; color:#1a1917">When you are watching: a host sandbox</h2>
+  <h2 style="font-family:Jost, Arial, sans-serif; font-size:64px; font-weight:700; line-height:0.95; letter-spacing:-1px; color:#1A1A1A">When you are watching: a host sandbox</h2>
   <div style="display:flex; flex-direction:row; gap:32px; align-items:start">
     <div style="display:flex; flex-direction:column; gap:16px; flex:1">
-      <h3 style="font-family:Jost, Arial, sans-serif; font-size:34px; font-weight:700; color:#1a1917">pi-sandbox blocks</h3>
-      <ul style="font-family:'Libre Caslon Text', Georgia, serif; font-size:26px; line-height:1.45; color:#4a453e">
+      <h3 style="font-family:Jost, Arial, sans-serif; font-size:34px; font-weight:700; color:#1A1A1A">pi-sandbox blocks</h3>
+      <ul style="font-family:Bitter, Georgia, serif; font-size:26px; line-height:1.45; color:#4A4640">
         <li>Reads anywhere in your home folder except the project</li>
         <li>Writes outside the project, and to .env and keys at any depth</li>
         <li>.git/hooks and .git/config, so no hook runs later on your machine</li>
         <li>Pi’s own config, skills and MCP files, so nothing persists</li>
         <li>Any domain not on the list: PyPI, npm and GitHub only</li>
       </ul>
-      <p style="font-family:'Libre Caslon Text', Georgia, serif; font-size:26px; line-height:1.4; color:#1f4e9c"><b>Upside:</b> a blocked path or domain asks you, much like a Claude Code permission prompt.</p>
-      <p style="font-family:'Libre Caslon Text', Georgia, serif; font-size:26px; line-height:1.4; color:#a82c1e"><b>Trade-off:</b> pi and its extensions run outside it. I keep extensions few and known.</p>
+      <p style="font-family:Bitter, Georgia, serif; font-size:26px; line-height:1.4; color:#1D4A96"><b>Upside:</b> a blocked path or domain asks you, much like a Claude Code permission prompt.</p>
+      <p style="font-family:Bitter, Georgia, serif; font-size:26px; line-height:1.4; color:#B02A20"><b>Trade-off:</b> pi and its extensions run outside it. I keep extensions few and known.</p>
     </div>
     <div style="width:700px; display:flex; flex-direction:column; gap:16px">
-      <div style="display:flex; flex-direction:column; gap:2px; padding:20px 28px; background:#f6f0e3; border:3px solid #1a1917">
-        <p style="font-family:'Courier Prime', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#5a564f"># install once, pinned</p>
-        <p style="font-family:'Courier Prime', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#1a1917">pi install npm:pi-sandbox@0.7.2</p>
-        <p style="font-family:'Courier Prime', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#5a564f"># then, inside any pi session:</p>
-        <p style="font-family:'Courier Prime', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#1a1917">/sandbox&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#5a564f"># show the policy</span></p>
-        <p style="font-family:'Courier Prime', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#1a1917">/sandbox-allow domain pypi.org</p>
+      <div style="display:flex; flex-direction:column; gap:2px; padding:20px 28px; background:#FBF8F2; border:2px solid #1A1A1A">
+        <p style="font-family:'Space Mono', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#4A4640"># install once, pinned</p>
+        <p style="font-family:'Space Mono', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#1A1A1A">pi install npm:pi-sandbox@0.7.2</p>
+        <p style="font-family:'Space Mono', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#4A4640"># then, inside any pi session:</p>
+        <p style="font-family:'Space Mono', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#1A1A1A">/sandbox&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#4A4640"># show the policy</span></p>
+        <p style="font-family:'Space Mono', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#1A1A1A">/sandbox-allow domain pypi.org</p>
       </div>
-      <div style="display:flex; flex-direction:column; gap:2px; padding:20px 28px; background:#f6f0e3; border:3px solid #1a1917">
-        <p style="font-family:'Courier Prime', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#5a564f"># ~/.pi/agent/sandbox.json, in part</p>
-        <p style="font-family:'Courier Prime', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#1a1917">"denyRead": ["/Users", "/Volumes"],</p>
-        <p style="font-family:'Courier Prime', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#1a1917">"allowRead": [".", "~/.gitconfig", …],</p>
-        <p style="font-family:'Courier Prime', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#1a1917">"allowWrite": [".", "/tmp", "~/.cache/uv"],</p>
-        <p style="font-family:'Courier Prime', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#1a1917">"denyWrite": [".env", "**/.env", "*.pem",</p>
-        <p style="font-family:'Courier Prime', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#1a1917">&nbsp;&nbsp;".git/hooks", ".pi/extensions", …]</p>
+      <div style="display:flex; flex-direction:column; gap:2px; padding:20px 28px; background:#FBF8F2; border:2px solid #1A1A1A">
+        <p style="font-family:'Space Mono', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#4A4640"># ~/.pi/agent/sandbox.json, in part</p>
+        <p style="font-family:'Space Mono', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#1A1A1A">"denyRead": ["/Users", "/Volumes"],</p>
+        <p style="font-family:'Space Mono', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#1A1A1A">"allowRead": [".", "~/.gitconfig", …],</p>
+        <p style="font-family:'Space Mono', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#1A1A1A">"allowWrite": [".", "/tmp", "~/.cache/uv"],</p>
+        <p style="font-family:'Space Mono', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#1A1A1A">"denyWrite": [".env", "**/.env", "*.pem",</p>
+        <p style="font-family:'Space Mono', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#1A1A1A">&nbsp;&nbsp;".git/hooks", ".pi/extensions", …]</p>
       </div>
     </div>
   </div>
-  <p style="position:absolute; bottom:64px; left:128px; width:1360px; font-family:'Courier Prime', 'Courier New', monospace; font-size:24px; color:#5a564f">pi-sandbox 0.7.2 by carderne, source read in full. macOS sandbox-exec for bash, a path check for read, write and edit.</p>
-  <p style="position:absolute; right:128px; bottom:64px; width:160px; font-family:'Courier Prime', 'Courier New', monospace; font-size:24px; font-weight:700; text-align:right; color:#5a564f">No. 09</p>
+  <p style="position:absolute; bottom:64px; left:128px; width:1360px; font-family:'Space Mono', 'Courier New', monospace; font-size:24px; color:#4A4640">pi-sandbox 0.7.2 by carderne, source read in full. macOS sandbox-exec for bash, a path check for read, write and edit.</p>
+  <p style="position:absolute; right:128px; bottom:64px; width:160px; font-family:'Space Mono', 'Courier New', monospace; font-size:24px; font-weight:700; text-align:center; color:#1A1A1A; text-transform:uppercase; letter-spacing:1px">No. 09</p>
   <aside>For attended work I run pi on the host with pi-sandbox. Installing it is one pinned command, and from then on it loads with every pi session; slash sandbox shows the live policy, and slash sandbox-allow adds a domain or path without waiting for a block. It wraps every bash command in macOS sandbox-exec and checks the paths of pi's read, write and edit tools. My global config denies all of /Users and then re-allows the project and a handful of things tools need, like git config and uv's folders. It blocks writes to secrets at any depth, to the git hooks and config, so the agent cannot plant a hook that runs later on your own machine, and to pi's own config, skills and MCP files, so nothing it writes can come back in a later session. Network is an allowlist: PyPI, npm, GitHub. When something is blocked it asks you to allow it for the session, the project or globally, which is the closest thing to Claude Code's permission prompts. The trade-off: the sandbox wraps the tools, not pi itself. Pi and every extension run with your full permissions, so I keep extensions few and read every one before installing it. And I read the sandbox itself: its runtime drops some upstream protections, which is why .git/hooks and friends are spelled out here.</aside>
 </section>

@@ -1,25 +1,26 @@
-<section id="lightweight" data-transition="fade" style="background:#EEE6D3; color:#1A1917; font-family:'Libre Caslon Text', Georgia, serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:36px">
-  <svg aria-label="paper grain" width="1920" height="1080" viewBox="0 0 1920 1080" style="position:absolute; left:0px; top:0px; width:1920px; height:1080px"><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="7"/><feColorMatrix type="matrix" values="0 0 0 0 0.10 0 0 0 0 0.09 0 0 0 0 0.08 1.3 0 0 0 -0.5"/></filter><rect width="1920" height="1080" filter="url(#grain)" opacity="0.35"/></svg>
-  <div style="display:flex; align-items:center; gap:24px"><p style="font-family:'Courier Prime', 'Courier New', monospace; font-size:24px; font-weight:700; letter-spacing:5px; text-transform:uppercase; color:#1A1917; white-space:nowrap">Utility</p><div style="flex:1; border-top:3px solid #1A1917"></div></div>
-  <h2 style="font-family:'Jost', Arial, sans-serif; font-size:64px; font-weight:800; line-height:0.95; letter-spacing:-1px; text-transform:uppercase">Keep the always-on prompt small</h2>
+<section id="lightweight" data-transition="fade" style="background:#F4EDE0; color:#1A1A1A; font-family:Bitter, Georgia, serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:36px">
+  <svg xmlns="http://www.w3.org/2000/svg" aria-label="Corner ornament: a blue half-moon rising from the bottom edge, a red circle overprinted on its edge and the yellow page-number disc" width="374" height="250" viewBox="1546 830 374 250" style="position:absolute; left:1546px; top:830px; width:374px; height:250px"><circle cx="1790" cy="1080" r="240" fill="#1D4A96"/><circle cx="1670" cy="872" r="38" fill="#C9302C" style="mix-blend-mode:multiply"/><circle cx="1712" cy="999" r="58" fill="#F2B705"/></svg>
+  <div style="display:flex; align-items:center; gap:24px"><p style="font-family:'Space Mono', 'Courier New', monospace; font-size:24px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:#1A1A1A; white-space:nowrap">Utility</p><div style="flex:1; border-top:4px solid #1A1A1A"></div></div>
+  <h2 style="font-family:Jost, Arial, sans-serif; font-size:64px; font-weight:700; line-height:0.95; letter-spacing:-1px">Keep the always-on prompt small</h2>
   <div style="display:flex; gap:24px">
-    <div style="flex:1; background:#F6F0E3; border:3px solid #1A1917; padding:28px 32px; display:flex; flex-direction:column; gap:8px">
-      <p style="font-family:'Jost', Arial, sans-serif; font-size:72px; font-weight:900; line-height:0.9; color:#1F4E9C">1,972 tokens</p>
-      <p style="font-size:26px; color:#4A453E; line-height:1.4">Pi’s first call: prompt plus 4 tool schemas. About 20 seconds to read cold on my laptop.</p>
+    <div style="flex:1; background:#FBF8F2; border:2px solid #1A1A1A; padding:28px 32px; display:flex; flex-direction:column; gap:8px">
+      <p style="font-family:Jost, Arial, sans-serif; font-size:72px; font-weight:800; line-height:0.9; color:#1D4A96">1,972 tokens</p>
+      <p style="font-size:26px; color:#4A4640; line-height:1.4">Pi’s first call: prompt plus 4 tool schemas. About 20 seconds to read cold on my laptop.</p>
     </div>
-    <div style="flex:1; background:#F6F0E3; border:3px solid #1A1917; padding:28px 32px; display:flex; flex-direction:column; gap:8px">
-      <p style="font-family:'Jost', Arial, sans-serif; font-size:72px; font-weight:900; line-height:0.9; color:#A82C1E">27,011 tokens</p>
-      <p style="font-size:26px; color:#4A453E; line-height:1.4">Claude Code’s first call, with 23 tools. About 5 minutes to read cold at the same speed.</p>
+    <div style="flex:1; background:#FBF8F2; border:2px solid #1A1A1A; padding:28px 32px; display:flex; flex-direction:column; gap:8px">
+      <p style="font-family:Jost, Arial, sans-serif; font-size:72px; font-weight:800; line-height:0.9; color:#B02A20">27,011 tokens</p>
+      <p style="font-size:26px; color:#4A4640; line-height:1.4">Claude Code’s first call, with 23 tools. About 5 minutes to read cold at the same speed.</p>
     </div>
   </div>
-  <table style="font-size:26px; color:#1A1917">
-    <tr style="background:#E2D6BC"><th style="width:30%; text-align:left; padding:12px 20px">Where an instruction lives</th><th style="width:70%; text-align:left">What it costs on every request</th></tr>
+  <table style="font-size:26px; color:#1A1A1A">
+    <tr style="background:#E8DCC4"><th style="width:30%; text-align:left; padding:12px 20px">Where an instruction lives</th><th style="width:70%; text-align:left">What it costs on every request</th></tr>
     <tr><td>AGENTS.md</td><td>Its whole text, so keep it to a few hundred tokens</td></tr>
     <tr><td>A skill</td><td>About 100 tokens to list it; the body only when it is used</td></tr>
     <tr><td>A prompt template</td><td>Nothing until you type the command</td></tr>
     <tr><td>SYSTEM.md</td><td>Replaces pi’s prompt and drops its tool list. Avoid it.</td></tr>
   </table>
-  <p style="position:absolute; left:128px; bottom:64px; width:1360px; font-family:'Courier Prime', 'Courier New', monospace; font-size:24px; color:#5A564F">First-call context on SWE-bench Lite from HarnessTax (Pan et al., 2026), one study. Cold reads at about 90 tok/s; later turns mostly hit the cache.</p>
-  <p style="position:absolute; right:128px; bottom:64px; width:160px; text-align:right; font-family:'Courier Prime', 'Courier New', monospace; font-size:24px; font-weight:700; color:#5A564F">No. 10</p>
+  <p style="position:absolute; left:128px; bottom:64px; width:1360px; font-family:'Space Mono', 'Courier New', monospace; font-size:24px; color:#4A4640">First-call context on SWE-bench Lite from HarnessTax (Pan et al., 2026), one study. Cold reads at about 90 tok/s; later turns mostly hit the cache.</p>
+  <p style="position:absolute; right:128px; bottom:64px; width:160px; text-align:center; font-family:'Space Mono', 'Courier New', monospace; font-size:24px; font-weight:700; color:#1A1A1A; text-transform:uppercase; letter-spacing:1px">No. 10</p>
+  <p style="position:absolute; top:100px; right:150px; width:240px; padding:10px 20px; font-family:Jost, Arial, sans-serif; font-size:32px; font-weight:700; text-align:center; color:#1A1A1A; background:#F2B705; border:2px solid #1A1A1A; border-radius:9999px; box-shadow:4px 4px 0 #1A1A1A; transform:rotate(-8deg)">14× smaller</p>
   <aside>Why keep it small? Because on a local model every token of standing prompt is time. A Berkeley study called HarnessTax measured what each harness sends before your task: pi about two thousand tokens, Claude Code about twenty-seven thousand with twenty-three tools. On a frontier API that is cheap and fast. On my laptop, which reads prompts at roughly ninety tokens a second, it is twenty seconds against about five minutes every time the cache is cold: a new session, a compaction, a model switch. So I treat the always-on prompt like a budget. Pi gives you four places to put instructions and they cost very different amounts. AGENTS.md is sent in full every request, so mine is about three hundred tokens. Skills cost about a hundred tokens each just to be listed, and their body only loads when used. Prompt templates cost nothing until you type them, which makes them the right home for most of your saved prompts. And avoid SYSTEM.md: it replaces pi's prompt and drops its tool list, not just the opening line.</aside>
 </section>

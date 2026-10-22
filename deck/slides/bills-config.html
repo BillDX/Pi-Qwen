@@ -1,43 +1,45 @@
-<section id="bills-config" data-transition="fade" style="background:#C9AE84; color:#1A1917; font-family:'Libre Caslon Text', Georgia, serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:36px">
-  <svg aria-label="paper grain" width="1920" height="1080" viewBox="0 0 1920 1080" style="position:absolute; left:0px; top:0px; width:1920px; height:1080px"><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="7"/><feColorMatrix type="matrix" values="0 0 0 0 0.10 0 0 0 0 0.09 0 0 0 0 0.08 1.3 0 0 0 -0.5"/></filter><rect width="1920" height="1080" filter="url(#grain)" opacity="0.35"/></svg>
-  <div style="display:flex; align-items:center; gap:24px"><p style="font-family:'Courier Prime', 'Courier New', monospace; font-size:24px; font-weight:700; letter-spacing:5px; text-transform:uppercase; color:#1A1917; white-space:nowrap">Bill’s settings and configuration</p><div style="flex:1; border-top:3px solid #1A1917"></div></div>
-  <h2 style="font-family:'Jost', Arial, sans-serif; font-size:64px; font-weight:800; line-height:0.95; letter-spacing:-1px; text-transform:uppercase">Everything on one page</h2>
-  <div style="display:flex; gap:24px; align-items:start">
-    <div style="flex:1; background:#D8C29E; border:3px solid #1A1917; padding:24px 28px; display:flex; flex-direction:column; gap:10px">
-      <h3 style="font-family:'Jost', Arial, sans-serif; font-size:32px; font-weight:700; color:#661B10">Machine and model</h3>
-      <p style="font-size:24px; color:#2F2B26; line-height:1.4">M3 Max MacBook Pro, 96 GB</p>
-      <p style="font-size:24px; color:#2F2B26; line-height:1.4">Qwen3.8-27B on MTPLX, depth 3</p>
-      <p style="font-size:24px; color:#2F2B26; line-height:1.4">Fallback: LM Studio, 4-bit</p>
-      <p style="font-size:24px; color:#2F2B26; line-height:1.4">Context 131,072; output 32,768</p>
-      <p style="font-size:24px; color:#2F2B26; line-height:1.4">Thinking medium</p>
-    </div>
-    <div style="flex:1; background:#D8C29E; border:3px solid #1A1917; padding:24px 28px; display:flex; flex-direction:column; gap:10px">
-      <h3 style="font-family:'Jost', Arial, sans-serif; font-size:32px; font-weight:700; color:#661B10">Pi 1.3.0</h3>
-      <p style="font-size:24px; color:#2F2B26; line-height:1.4">Pinned: pi-sandbox, pi-mtplx</p>
-      <p style="font-size:24px; color:#2F2B26; line-height:1.4">Off: MCP, codemode, tool search</p>
-      <p style="font-size:24px; color:#2F2B26; line-height:1.4">4 guard extensions</p>
-      <p style="font-size:24px; color:#2F2B26; line-height:1.4">3 skills and 4 templates</p>
-      <p style="font-size:24px; color:#2F2B26; line-height:1.4">AGENTS.md of about 300 tokens</p>
-    </div>
-    <div style="flex:1; background:#D8C29E; border:3px solid #1A1917; padding:24px 28px; display:flex; flex-direction:column; gap:10px">
-      <h3 style="font-family:'Jost', Arial, sans-serif; font-size:32px; font-weight:700; color:#661B10">Boundaries</h3>
-      <p style="font-size:24px; color:#2F2B26; line-height:1.4">Sandbox: project only</p>
-      <p style="font-size:24px; color:#2F2B26; line-height:1.4">22 write blocks, 8 domains</p>
-      <p style="font-size:24px; color:#2F2B26; line-height:1.4">Guards: rm -rf, sudo, .env, .git</p>
-      <p style="font-size:24px; color:#2F2B26; line-height:1.4">A git stash every turn</p>
-      <p style="font-size:24px; color:#2F2B26; line-height:1.4">Project sandbox.json only if trusted</p>
+<section id="bills-config" data-transition="fade" style="display:flex; flex-direction:column; gap:36px; padding:128px 128px 160px; background:#e8dcc4">
+  <svg xmlns="http://www.w3.org/2000/svg" aria-label="Corner ornament: a red quarter circle in the corner, a blue circle overprinted on its edge and the yellow page-number disc" viewBox="1650 866 270 214" style="position:absolute; top:866px; left:1650px; width:270px; height:214px"><circle cx="1920" cy="1080" r="210" fill="#C9302C"/><circle cx="1815" cy="898" r="28" fill="#1D4A96" style="mix-blend-mode:multiply"/><circle cx="1712" cy="999" r="58" fill="#F2B705"/></svg>
+  <div style="display:flex; flex-direction:row; gap:24px; align-items:center">
+    <p style="font-family:'Space Mono', 'Courier New', monospace; font-size:24px; font-weight:700; letter-spacing:3px; text-transform:uppercase; white-space:nowrap; color:#1a1a1a">Bill’s settings and configuration</p>
+    <div style="display:flex; flex-direction:column; flex:1; border-top:4px solid #1a1a1a">
     </div>
   </div>
-  <div style="background:#D8C29E; border:3px solid #1A1917; padding:20px 28px; display:flex; flex-direction:column; gap:2px">
-    <p style="font-family:'Courier Prime', 'Courier New', monospace; font-size:24px; color:#33302A; line-height:1.5">~/.pi/agent/settings.json</p>
-    <p style="font-family:'Courier Prime', 'Courier New', monospace; font-size:24px; color:#1A1917; line-height:1.5">"defaultProvider": "mtplx",  "defaultThinkingLevel": "medium",</p>
-    <p style="font-family:'Courier Prime', 'Courier New', monospace; font-size:24px; color:#1A1917; line-height:1.5">"packages": ["npm:pi-sandbox@0.7.2", "npm:pi-mtplx@0.2.0"],</p>
-    <p style="font-family:'Courier Prime', 'Courier New', monospace; font-size:24px; color:#1A1917; line-height:1.5">"extensions": ["-builtin:mcp", "-builtin:codemode", "-builtin:tool-search"]</p>
+  <h2 style="font-family:Jost, Arial, sans-serif; font-size:64px; font-weight:700; line-height:0.95; letter-spacing:-1px; color:#1a1a1a">Everything on one page</h2>
+  <div style="display:flex; flex-direction:row; gap:24px; align-items:start">
+    <div style="display:flex; flex-direction:column; gap:10px; flex:1; padding:24px 28px; background:#fbf8f2; border:2px solid #1a1a1a">
+      <h3 style="font-family:Jost, Arial, sans-serif; font-size:32px; font-weight:700; color:#b02a20">Machine and model</h3>
+      <p style="font-family:Bitter, Georgia, serif; font-size:24px; line-height:1.4; color:#4a4640">M3 Max MacBook Pro, 96 GB</p>
+      <p style="font-family:Bitter, Georgia, serif; font-size:24px; line-height:1.4; color:#4a4640"><b>Qwen3.8-27B on MTPLX, depth 3</b></p>
+      <p style="font-family:Bitter, Georgia, serif; font-size:24px; line-height:1.4; color:#4a4640">Fallback: LM Studio, 4-bit</p>
+      <p style="font-family:Bitter, Georgia, serif; font-size:24px; line-height:1.4; color:#4a4640">Context 131,072; output 32,768</p>
+      <p style="font-family:Bitter, Georgia, serif; font-size:24px; font-weight:700; line-height:1.4; color:#4a4640">Thinking medium</p>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:10px; flex:1; padding:24px 28px; background:#fbf8f2; border:2px solid #1a1a1a">
+      <h3 style="font-family:Jost, Arial, sans-serif; font-size:32px; font-weight:700; color:#b02a20">Pi 1.3.0</h3>
+      <p style="font-family:Bitter, Georgia, serif; font-size:24px; line-height:1.4; color:#4a4640">Pinned: pi-sandbox, pi-mtplx</p>
+      <p style="font-family:Bitter, Georgia, serif; font-size:24px; line-height:1.4; color:#4a4640">Off: MCP, codemode, tool search</p>
+      <p style="font-family:Bitter, Georgia, serif; font-size:24px; line-height:1.4; color:#4a4640">4 guard extensions</p>
+      <p style="font-family:Bitter, Georgia, serif; font-size:24px; line-height:1.4; color:#4a4640">3 skills and 4 templates</p>
+      <p style="font-family:Bitter, Georgia, serif; font-size:24px; line-height:1.4; color:#4a4640">AGENTS.md of about 300 tokens</p>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:10px; flex:1; padding:24px 28px; background:#fbf8f2; border:2px solid #1a1a1a">
+      <h3 style="font-family:Jost, Arial, sans-serif; font-size:32px; font-weight:700; color:#b02a20">Boundaries</h3>
+      <p style="font-family:Bitter, Georgia, serif; font-size:24px; line-height:1.4; color:#4a4640">Sandbox: project only</p>
+      <p style="font-family:Bitter, Georgia, serif; font-size:24px; line-height:1.4; color:#4a4640">22 write blocks, 8 domains</p>
+      <p style="font-family:Bitter, Georgia, serif; font-size:24px; line-height:1.4; color:#4a4640">Guards: rm -rf, sudo, .env, .git</p>
+      <p style="font-family:Bitter, Georgia, serif; font-size:24px; line-height:1.4; color:#4a4640">A git stash every turn</p>
+      <p style="font-family:Bitter, Georgia, serif; font-size:24px; line-height:1.4; color:#4a4640">Project sandbox.json only if trusted</p>
+    </div>
   </div>
-  <p style="position:absolute; left:128px; bottom:64px; width:1360px; font-family:'Courier Prime', 'Courier New', monospace; font-size:24px; color:#33302A">Every file, with the tests behind it, is in the write-up “Running pi safely on macOS”. Ask me for the link.</p>
-  <p style="position:absolute; right:128px; bottom:64px; width:160px; text-align:right; font-family:'Courier Prime', 'Courier New', monospace; font-size:24px; font-weight:700; color:#33302A">No. 19</p>
-  <svg aria-label="registration mark" width="56" height="56" viewBox="0 0 56 56" style="position:absolute; left:44px; top:44px; width:56px; height:56px"><g fill="none" stroke-width="2"><g stroke="#C8382A" transform="translate(3 2)"><circle cx="28" cy="28" r="14"/><path d="M28 4V52M4 28H52"/></g><g stroke="#1A1917"><circle cx="28" cy="28" r="14"/><path d="M28 4V52M4 28H52"/></g></g></svg>
-  <svg aria-label="registration mark" width="56" height="56" viewBox="0 0 56 56" style="position:absolute; right:44px; bottom:44px; width:56px; height:56px"><g fill="none" stroke-width="2"><g stroke="#C8382A" transform="translate(3 2)"><circle cx="28" cy="28" r="14"/><path d="M28 4V52M4 28H52"/></g><g stroke="#1A1917"><circle cx="28" cy="28" r="14"/><path d="M28 4V52M4 28H52"/></g></g></svg>
-  <p style="position:absolute; right:150px; top:112px; width:320px; font-family:'Jost', Arial, sans-serif; font-size:32px; font-weight:900; letter-spacing:3px; text-transform:uppercase; text-align:center; color:#661B10; border:4px solid #661B10; padding:8px 16px; transform:rotate(-6deg); opacity:0.9">OK to print</p>
+  <div style="display:flex; flex-direction:column; gap:2px; padding:20px 28px; background:#fbf8f2; border:2px solid #1a1a1a">
+    <p style="font-family:'Space Mono', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#4a4640">~/.pi/agent/settings.json</p>
+    <p style="font-family:'Space Mono', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#1a1a1a">"defaultProvider": "mtplx", "defaultThinkingLevel": "medium",</p>
+    <p style="font-family:'Space Mono', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#1a1a1a">"packages": ["npm:pi-sandbox@0.7.2", "npm:pi-mtplx@0.2.0"],</p>
+    <p style="font-family:'Space Mono', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#1a1a1a">"extensions": ["-builtin:mcp", "-builtin:codemode", "-builtin:tool-search"]</p>
+  </div>
+  <p style="position:absolute; bottom:64px; left:128px; width:1360px; font-family:'Space Mono', 'Courier New', monospace; font-size:24px; color:#4a4640">Every file, with the tests behind it, is in the write-up “Running pi safely on macOS”. Ask me for the link.</p>
+  <p style="position:absolute; right:128px; bottom:64px; width:160px; font-family:'Space Mono', 'Courier New', monospace; font-size:24px; font-weight:700; letter-spacing:1px; text-align:center; text-transform:uppercase; color:#1a1a1a">No. 19</p>
+  <p style="position:absolute; top:100px; right:150px; width:260px; padding:10px 20px; font-family:Jost, Arial, sans-serif; font-size:32px; font-weight:700; text-align:center; color:#f4ede0; background:#c9302c; border:2px solid #1a1a1a; border-radius:256px; box-shadow:4px 4px 0 #1a1a1a; transform:rotate(-8deg)">SHARE AND ENJOY</p>
   <aside>And here is everything on one page, for anyone who wants to copy it. The machine is an M3 Max MacBook Pro with 96 gigabytes. The model is Qwen3.8-27B on MTPLX, 4-bit, drafting three tokens ahead, with LM Studio's MLX 4-bit as the fallback. Pi's context is capped at 131 thousand tokens and output at about 33 thousand, thinking on medium, and compaction at pi's defaults. Pi itself is version 1.3.0, with the sandbox and MTPLX packages pinned to exact versions, the built-in MCP, codemode and tool-search extensions turned off because I do not use them and MCP servers would run outside the sandbox, four small guard extensions, three skills, four prompt templates and an AGENTS.md of about three hundred tokens. The boundaries: the sandbox denies all of /Users and allows the project back, blocks twenty-two kinds of write, and allows eight domains. The guards confirm rm -rf and sudo and protect .env and .git, a git stash is taken every turn, and a project's own sandbox.json is only read once I trust the project. Every one of these files, and the tests behind them, is in the write-up; ask me for the link.</aside>
 </section>
