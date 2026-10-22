@@ -1,0 +1,26 @@
+<section id="first-evening" data-transition="fade" style="background:#EEE6D3; color:#1A1917; font-family:'Libre Caslon Text', Georgia, serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:36px">
+  <svg aria-label="paper grain" width="1920" height="1080" viewBox="0 0 1920 1080" style="position:absolute; left:0px; top:0px; width:1920px; height:1080px"><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="7"/><feColorMatrix type="matrix" values="0 0 0 0 0.10 0 0 0 0 0.09 0 0 0 0 0.08 1.3 0 0 0 -0.5"/></filter><rect width="1920" height="1080" filter="url(#grain)" opacity="0.35"/></svg>
+  <div style="display:flex; align-items:center; gap:24px"><p style="font-family:'Courier Prime', 'Courier New', monospace; font-size:24px; font-weight:700; letter-spacing:5px; text-transform:uppercase; color:#1A1917; white-space:nowrap">Getting started</p><div style="flex:1; border-top:3px solid #1A1917"></div></div>
+  <h2 style="font-family:'Jost', Arial, sans-serif; font-size:64px; font-weight:800; line-height:0.95; letter-spacing:-1px; text-transform:uppercase">Your first evening</h2>
+  <div style="display:flex; gap:40px; align-items:start">
+    <ol style="flex:1; font-size:28px; line-height:1.5; color:#1A1917">
+      <li>Install LM Studio; download Qwen3.8-27B, MLX 4-bit (16 GB)</li>
+      <li>Install pi with --ignore-scripts; add LM Studio to models.json</li>
+      <li>Install pi-sandbox, pinned, and start from my sandbox.json</li>
+      <li>Write a short AGENTS.md; add the four prompt templates</li>
+      <li>In a clone of a small repo with passing tests: /plan, approve, then /fix-tests</li>
+    </ol>
+    <div style="width:700px; display:flex; flex-direction:column; gap:20px">
+      <div style="background:#F6F0E3; border:3px solid #1A1917; padding:24px 32px; display:flex; flex-direction:column; gap:2px">
+        <p style="font-family:'Courier Prime', 'Courier New', monospace; font-size:24px; color:#1A1917; line-height:1.5">npm install -g --ignore-scripts \</p>
+        <p style="font-family:'Courier Prime', 'Courier New', monospace; font-size:24px; color:#1A1917; line-height:1.5">&#160;&#160;@earendil-works/pi-coding-agent</p>
+        <p style="font-family:'Courier Prime', 'Courier New', monospace; font-size:24px; color:#1A1917; line-height:1.5">pi install npm:pi-sandbox@0.7.2</p>
+        <p style="font-family:'Courier Prime', 'Courier New', monospace; font-size:24px; color:#1A1917; line-height:1.5">git clone my-app try-pi</p>
+        <p style="font-family:'Courier Prime', 'Courier New', monospace; font-size:24px; color:#1A1917; line-height:1.5">cd try-pi &amp;&amp; pi</p>
+      </div>
+      <p style="font-family:'Libre Caslon Text', Georgia, serif; font-size:32px; font-style:italic; color:#5A564F; line-height:1.35">Later: MTPLX for speed, skills for discipline.</p>
+    </div>
+  </div>
+  <p style="position:absolute; right:128px; bottom:64px; width:160px; text-align:right; font-family:'Courier Prime', 'Courier New', monospace; font-size:24px; font-weight:700; color:#5A564F">No. 17</p>
+  <aside>If you want to try this, here is an evening's worth. Install LM Studio and download Qwen3.8-27B in the MLX 4-bit build, about sixteen gigabytes. Install pi with ignore-scripts, as its own README says, and add LM Studio as a provider in models.json; it is one small block. Install pi-sandbox at a pinned version and start from my sandbox config, which is in the write-up. Write a short AGENTS.md and copy the four prompt templates. Then pick a small repository of your own whose tests pass today, make a clone, and try the loop: slash plan, read and approve the plan, then slash fix-tests or a small feature. MTPLX for speed and the skills for discipline can come later; neither is needed on day one.</aside>
+</section>

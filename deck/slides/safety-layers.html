@@ -1,0 +1,21 @@
+<section id="safety-layers" data-transition="fade" style="display:flex; flex-direction:column; gap:32px; padding:128px 128px 160px; background:#eee6d3">
+  <svg xmlns="http://www.w3.org/2000/svg" aria-label="paper grain" viewBox="0 0 1920 1080" style="position:absolute; top:0; left:0; width:1920px; height:1080px"><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="7"/><feColorMatrix type="matrix" values="0 0 0 0 0.10 0 0 0 0 0.09 0 0 0 0 0.08 1.3 0 0 0 -0.5"/></filter><rect width="1920" height="1080" filter="url(#grain)" opacity="0.35"/></svg>
+  <div style="display:flex; flex-direction:row; gap:24px; align-items:center">
+    <p style="font-family:'Courier Prime', 'Courier New', monospace; font-size:24px; font-weight:700; letter-spacing:5px; text-transform:uppercase; white-space:nowrap; color:#1a1917">Making pi safe</p>
+    <div style="display:flex; flex-direction:column; flex:1; border-top:3px solid #1a1917">
+    </div>
+  </div>
+  <h2 style="font-family:Jost, Arial, sans-serif; font-size:64px; font-weight:800; line-height:0.95; letter-spacing:-1px; text-transform:uppercase; color:#1a1917">Claude Code’s safety, in four layers</h2>
+  <p style="font-family:'Libre Caslon Text', Georgia, serif; font-size:28px; line-height:1.4; color:#4a453e">Pi’s own security docs say it plainly: no sandbox, and every extension runs with your full permissions.</p>
+  <table style="font-family:'Libre Caslon Text', Georgia, serif; font-size:24px; color:#1a1917">
+    <tr style="background:#e2d6bc"><th style="padding:12px 20px; width:20%">Layer</th><th style="padding:12px 20px; width:40%">What I use with pi</th><th style="padding:12px 20px; width:40%">The nearest Claude Code built-in</th></tr>
+    <tr><td style="padding:12px 20px">1. A boundary</td><td style="padding:12px 20px">pi-sandbox: the project only, 8 domains</td><td style="padding:12px 20px">The built-in bash sandbox</td></tr>
+    <tr><td style="padding:12px 20px">2. Guards</td><td style="padding:12px 20px">Confirm rm -rf and sudo; protect .env and .git&nbsp;</td><td style="padding:12px 20px">Permission prompts, deny rules, protected paths, hooks</td></tr>
+    <tr><td style="padding:12px 20px">3. Undo</td><td style="padding:12px 20px">A clone and a branch per task; a git stash each turn</td><td style="padding:12px 20px">/rewind checkpoints</td></tr>
+    <tr><td style="padding:12px 20px">4. Credentials</td><td style="padding:12px 20px">A local model: no key to leak, no bill</td><td style="padding:12px 20px">Your account’s own limits</td></tr>
+  </table>
+  <p style="font-family:'Libre Caslon Text', Georgia, serif; font-size:26px; line-height:1.4; color:#a82c1e"><b>Not rebuilt:</b> auto mode’s classifier that reviews each action, and plan mode’s lock on edits. I use a /plan template and approve by hand.</p>
+  <p style="position:absolute; bottom:64px; left:128px; width:1360px; font-family:'Courier Prime', 'Courier New', monospace; font-size:24px; color:#5a564f">Claude Code features from code.claude.com docs, 21 October 2026.</p>
+  <p style="position:absolute; right:128px; bottom:64px; width:160px; font-family:'Courier Prime', 'Courier New', monospace; font-size:24px; font-weight:700; text-align:right; color:#5a564f">No. 08</p>
+  <aside>Claude Code gives you a lot of safety for free, so the question is how much of it you can rebuild around pi. Pi's own security page is blunt: there is no sandbox, and every extension runs with your full permissions. I rebuilt it in four layers. A boundary: pi-sandbox, which keeps the agent inside the project and on a short list of domains; Claude Code's equivalent is its built-in bash sandbox. Guards: two small extensions that confirm rm -rf and sudo and refuse writes to .env and .git, which stand in for permission prompts, deny rules and protected paths. Undo: a clone and a branch per task, plus a git stash every turn, which does the job of rewind and also covers what bash changed. Credentials: a local model has no key to leak and no bill. What I have not rebuilt: auto mode's classifier that reviews each action before it runs, and plan mode's hard lock on edits. I use a plan template and approve plans by hand instead.</aside>
+</section>

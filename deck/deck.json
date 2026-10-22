@@ -1,0 +1,25 @@
+{
+  "v": 4,
+  "createdOnFiles": {"v": 1, "at": "2026-10-21T20:40:00Z"},
+  "lists": "css",
+  "title": "Pi on a local model: a practical guide",
+  "cover": "cover",
+  "order": ["cover", "expectations", "models", "qwen38", "runtime", "pi-vs-cc", "pi-daily", "safety-layers", "safety-host", "lightweight", "toolkit", "customize", "pi-tricks", "red-green", "context", "local-prompting", "first-evening", "resources", "bills-config"],
+  "sections": {
+    "s1": {"description": "Why try a local setup, and what to expect next to Claude Code", "start": "cover"},
+    "s2": {"description": "The model: Qwen3.8-27B and how it compares", "start": "models"},
+    "s3": {"description": "The runtime: LM Studio or MTPLX", "start": "runtime"},
+    "s4": {"description": "Pi as a coding environment, next to Claude Code", "start": "pi-vs-cc"},
+    "s5": {"description": "Making pi safe without Claude Code’s built-in safety", "start": "safety-layers"},
+    "s6": {"description": "Utility: a small always-on prompt with the right things in it", "start": "lightweight"},
+    "s7": {"description": "Customizing pi", "start": "customize"},
+    "s8": {"description": "Prompt practices for smaller, slower models", "start": "red-green"},
+    "s9": {"description": "Getting started, links and my configuration", "start": "first-evening"}
+  },
+  "faces": {
+    "jost": {"family": "Jost", "href": "https://fonts.googleapis.com/css2?family=Jost:wght@500;700;800;900&display=swap"},
+    "courier-prime": {"family": "Courier Prime", "href": "https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap"},
+    "libre-caslon-text": {"family": "Libre Caslon Text", "href": "https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap"}
+  },
+  "designSystems": [{"title": "Presswerk", "namespace": "presswerk", "artifact": "https://claude.ai/artifact/5TLESkmJ5CBwgUZUefj6M5", "version": "1792622357-5f09", "copiedAt": "2026-10-21T21:30:00Z"}]
+}

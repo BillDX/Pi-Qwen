@@ -1,0 +1,29 @@
+<section id="runtime" data-transition="fade" style="display:flex; flex-direction:column; gap:36px; padding:128px 128px 160px; background:#eee6d3">
+  <svg xmlns="http://www.w3.org/2000/svg" aria-label="paper grain" viewBox="0 0 1920 1080" style="position:absolute; top:0; left:0; width:1920px; height:1080px"><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="7"/><feColorMatrix type="matrix" values="0 0 0 0 0.10 0 0 0 0 0.09 0 0 0 0 0.08 1.3 0 0 0 -0.5"/></filter><rect width="1920" height="1080" filter="url(#grain)" opacity="0.35"/></svg>
+  <div style="display:flex; flex-direction:row; gap:24px; align-items:center">
+    <p style="font-family:'Courier Prime', 'Courier New', monospace; font-size:24px; font-weight:700; letter-spacing:5px; text-transform:uppercase; white-space:nowrap; color:#1a1917">The runtime</p>
+    <div style="display:flex; flex-direction:column; flex:1; border-top:3px solid #1a1917">
+    </div>
+  </div>
+  <h2 style="font-family:Jost, Arial, sans-serif; font-size:64px; font-weight:800; line-height:0.95; letter-spacing:-1px; text-transform:uppercase; color:#1a1917">2 ENGINES: &nbsp;&nbsp;LM Studio vs MTPLX</h2>
+  <div style="display:flex; flex-direction:row; gap:40px; align-items:start">
+    <table style="width:1080px; font-family:'Libre Caslon Text', Georgia, serif; font-size:26px; color:#1a1917">
+      <tr style="background:#e2d6bc"><th style="padding:12px 20px; width:40%">Measured on an M3 Max</th><th style="padding:12px 20px; width:30%">LM Studio, MLX 4-bit</th><th style="padding:12px 20px; width:30%">MTPLX, MTP depth 3</th></tr>
+      <tr><td style="padding:12px 20px">Writing predictable code</td><td style="padding:12px 20px">17.4 tok/s</td><td style="padding:12px 20px">33.9 tok/s, 2×</td></tr>
+      <tr><td style="padding:12px 20px">Writing varied prose</td><td style="padding:12px 20px">17.0 tok/s</td><td style="padding:12px 20px">19.6 tok/s</td></tr>
+      <tr><td style="padding:12px 20px">Reading the prompt</td><td style="padding:12px 20px">98 to 144 tok/s</td><td style="padding:12px 20px">92 to 130 tok/s</td></tr>
+      <tr><td style="padding:12px 20px">Five tasks × 3 runs through pi</td><td style="padding:12px 20px">14 of 15, 36 min</td><td style="padding:12px 20px">15 of 15, 30 min</td></tr>
+      <tr><td style="padding:12px 20px">Weights on disk</td><td style="padding:12px 20px">16 GB</td><td style="padding:12px 20px">20.7 GB</td></tr>
+      <tr><td style="padding:12px 20px">Setup</td><td style="padding:12px 20px">App, model browser, local server</td><td style="padding:12px 20px">App plus the pi-mtplx extension</td></tr>
+    </table>
+    <div style="display:flex; flex-direction:column; gap:20px; flex:1">
+      <p style="font-family:'Libre Caslon Text', Georgia, serif; font-size:32px; font-style:italic; line-height:1.35; color:#5a564f">My pick: MTPLX for just this model. &nbsp;<br><br>LM Studio for everything else.</p>
+      <p style="font-family:'Libre Caslon Text', Georgia, serif; font-size:26px; line-height:1.4; color:#4a453e">MTPLX drafts tokens with the model’s own prediction heads. That doubles writing on code, but reading is no faster, and real agent turns gained about a quarter.</p>
+      <p style="font-family:'Libre Caslon Text', Georgia, serif; font-size:26px; line-height:1.4; color:#4a453e">LM Studio is the easier start: a model browser and a server in one app.</p>
+    </div>
+  </div>
+  <p style="position:absolute; bottom:64px; left:128px; width:1360px; font-family:'Courier Prime', 'Courier New', monospace; font-size:24px; color:#5a564f">MacBook Pro M3 Max, 96 GB, 300 GB/s. Speeds are medians of 3 with thinking off; suite with thinking medium, 480 s limit. 26 September 2026.</p>
+  <p style="position:absolute; right:128px; bottom:64px; width:160px; font-family:'Courier Prime', 'Courier New', monospace; font-size:24px; font-weight:700; text-align:right; color:#5a564f">No. 05</p>
+  <p style="position:absolute; top:112px; right:150px; width:240px; padding:8px 16px; font-family:Jost, Arial, sans-serif; font-size:32px; font-weight:900; letter-spacing:3px; text-align:center; text-transform:uppercase; color:#a82c1e; border:4px solid #a82c1e; opacity:0.9; transform:rotate(-6deg)">My pick</p>
+  <aside>Same model, two engines. LM Studio is where I started and where I would tell you to start: one app with a model browser and an OpenAI-compatible server, and its MLX build of Qwen3.8 at 4-bit is sixteen gigabytes. MTPLX is a newer runtime that uses the model's own multi-token-prediction heads to draft a few tokens ahead and check them in one pass. On predictable code that doubles the writing speed. On varied prose it adds about fifteen percent. And it does nothing for reading the prompt, which is the part you feel most with a local model. Through pi on five real coding tasks, three runs each, MTPLX passed all fifteen and took thirty minutes against thirty-six, so about a quarter faster in practice, not twice. So my default is MTPLX, through the pi-mtplx extension, with LM Studio as the fallback. One warning: read what installers do. The MTPLX installer added a passwordless sudo rule, which I removed.</aside>
+</section>
