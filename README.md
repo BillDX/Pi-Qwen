@@ -35,3 +35,16 @@ Each slide is a 1920 × 1080 HTML fragment with inline styles. The deck was buil
 - **Published scores:** benchmark figures come from Artificial Analysis and the Qwen3.8-27B model card.
 
 Each slide's footer gives its source and date.
+
+## License
+
+Copyright © 2026 Bill McIntyre.
+
+This deck and everything in this repository are licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/) (CC BY-SA 4.0). The full text is in [LICENSE](LICENSE).
+
+You are free to share, adapt and present this material, including for commercial workshops, as long as you:
+
+- **Give credit:** name Bill McIntyre as the author, link to this repository and the license, and say if you made changes.
+- **Share alike:** release your adapted version under CC BY-SA 4.0 or a compatible license.
+
+Quotations, benchmark figures, product names and screenshots of third-party software belong to their respective owners. They are included here for commentary and are not covered by this license.
