@@ -16,7 +16,7 @@ The deck is *Pi on a local model: a field guide for Claude Code users* (Bill McI
 | 6 | Utility | 10 Keep the always-on prompt small · 11 What I actually keep in there |
 | 7 | Customizing pi | 12 Hotrod mods: eight worth a look · 13 Four neat pi tricks |
 | 8 | Prompting smaller models | 14 Red, then green: tests drive the run · 15 Live within a smaller window · 16 Prompt habits that suit a 27B |
-| 9 | Getting started | 17 Your first evening · 18 Links worth keeping · 19 My settings and configuration |
+| 9 | Getting started | 17 Your first evening · 18 Links worth keeping · 19 My settings and configuration · 20 Take it, change it, pass it on (license) |
 
 ## Repository layout
 
