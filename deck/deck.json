@@ -4,7 +4,7 @@
   "lists": "css",
   "title": "Pi on a local model: a practical guide",
   "cover": "cover",
-  "order": ["cover", "expectations", "models", "qwen38", "runtime", "pi-vs-cc", "pi-daily", "safety-layers", "safety-host", "lightweight", "toolkit", "customize", "pi-tricks", "red-green", "context", "local-prompting", "first-evening", "resources", "bills-config", "license"],
+  "order": ["cover", "cheat-sheet", "expectations", "models", "qwen38", "runtime", "pi-vs-cc", "pi-daily", "safety-layers", "safety-host", "lightweight", "toolkit", "customize", "pi-tricks", "red-green", "context", "local-prompting", "first-evening", "resources", "bills-config", "license"],
   "sections": {
     "s1": {"description": "Why try a local setup, and what to expect next to Claude Code", "start": "cover"},
     "s2": {"description": "The model: Qwen3.8-27B and how it compares", "start": "models"},

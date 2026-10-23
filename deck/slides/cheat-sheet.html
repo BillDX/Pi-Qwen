@@ -1,0 +1,72 @@
+<section id="cheat-sheet" data-transition="fade" style="background:#F4EDE0; color:#1A1A1A; font-family:Bitter, Georgia, serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:28px">
+  <svg xmlns="http://www.w3.org/2000/svg" aria-label="Corner ornament: a blue quarter circle in the corner, a red circle overprinted on its edge and the yellow page-number disc" width="270" height="164" viewBox="1650 916 270 164" style="position:absolute; left:1650px; top:916px; width:270px; height:164px"><circle cx="1920" cy="1080" r="160" fill="#1D4A96"/><circle cx="1840" cy="941" r="20" fill="#C9302C" style="mix-blend-mode:multiply"/><circle cx="1712" cy="999" r="58" fill="#F2B705"/></svg>
+  <div style="display:flex; flex-direction:row; gap:24px; align-items:center"><p style="font-family:'Space Mono', 'Courier New', monospace; font-size:24px; font-weight:700; letter-spacing:3px; text-transform:uppercase; white-space:nowrap; color:#1A1A1A">Getting started</p><div style="flex:1; border-top:4px solid #1A1A1A"></div><svg aria-label="Formwerk marks: a red circle, a yellow triangle and a blue square" width="104" height="28" viewBox="0 0 104 28" style="width:104px; height:28px"><circle cx="14" cy="14" r="14" fill="#C9302C"/><path d="M52 0 L66 28 L38 28 Z" fill="#F2B705"/><rect x="76" y="0" width="28" height="28" fill="#1D4A96"/></svg></div>
+  <h2 style="font-family:Jost, Arial, sans-serif; font-size:64px; font-weight:700; line-height:0.95; letter-spacing:-1px; color:#1A1A1A">Cheat sheet: zero to a local agent</h2>
+  <div style="display:flex; flex-direction:row; gap:40px; align-items:start">
+    <div style="flex:1; display:flex; flex-direction:column; gap:16px">
+      <div style="display:flex; flex-direction:row; gap:16px; align-items:start">
+        <p style="width:44px; height:44px; font-family:Jost, Arial, sans-serif; font-size:26px; font-weight:800; line-height:44px; text-align:center; color:#F4EDE0; background:#C9302C; border-radius:50%">1</p>
+        <div style="flex:1; display:flex; flex-direction:column; gap:2px">
+          <p style="font-family:Jost, Arial, sans-serif; font-size:28px; font-weight:700; line-height:1.3; color:#1A1A1A">Install the MTPLX app · <a href="https://mtplx.com/download"><span style="color:#1D4A96">mtplx.com/download</span></a></p>
+          <p style="font-family:Bitter, Georgia, serif; font-size:24px; line-height:1.4; color:#B02A20">Its fan control adds a passwordless sudo rule. Remove it:</p>
+          <p style="font-family:'Space Mono', 'Courier New', monospace; font-size:24px; line-height:1.4; color:#4A4640">sudo rm /etc/sudoers.d/mtplx-thermalforge</p>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:row; gap:16px; align-items:start">
+        <p style="width:44px; height:44px; font-family:Jost, Arial, sans-serif; font-size:26px; font-weight:800; line-height:44px; text-align:center; color:#F4EDE0; background:#1D4A96; border-radius:50%">2</p>
+        <div style="flex:1; display:flex; flex-direction:column; gap:2px">
+          <p style="font-family:Jost, Arial, sans-serif; font-size:28px; font-weight:700; line-height:1.3; color:#1A1A1A">Download the model (20 GB) and serve it</p>
+          <p style="font-family:'Space Mono', 'Courier New', monospace; font-size:24px; line-height:1.4; color:#4A4640">mtplx pull Youssofal/Qwen3.8-27B-MTPLX-Optimized-Speed</p>
+          <p style="font-family:'Space Mono', 'Courier New', monospace; font-size:24px; line-height:1.4; color:#4A4640">mtplx quickstart --port 8000</p>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:row; gap:16px; align-items:start">
+        <p style="width:44px; height:44px; font-family:Jost, Arial, sans-serif; font-size:26px; font-weight:800; line-height:44px; text-align:center; color:#1A1A1A; background:#F2B705; border-radius:50%">3</p>
+        <div style="flex:1; display:flex; flex-direction:column; gap:2px">
+          <p style="font-family:Jost, Arial, sans-serif; font-size:28px; font-weight:700; line-height:1.3; color:#1A1A1A">Install pi (Node 22.19+) · <a href="https://github.com/earendil-works/pi"><span style="color:#1D4A96">github.com/earendil-works/pi</span></a></p>
+          <p style="font-family:'Space Mono', 'Courier New', monospace; font-size:24px; line-height:1.4; color:#4A4640">npm install -g --ignore-scripts \</p>
+          <p style="font-family:'Space Mono', 'Courier New', monospace; font-size:24px; line-height:1.4; color:#4A4640">&#160;&#160;@earendil-works/pi-coding-agent@1.3.0</p>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:row; gap:16px; align-items:start">
+        <p style="width:44px; height:44px; font-family:Jost, Arial, sans-serif; font-size:26px; font-weight:800; line-height:44px; text-align:center; color:#F4EDE0; background:#C9302C; border-radius:50%">4</p>
+        <div style="flex:1; display:flex; flex-direction:column; gap:2px">
+          <p style="font-family:Jost, Arial, sans-serif; font-size:28px; font-weight:700; line-height:1.3; color:#1A1A1A">Add the sandbox and the MTPLX bridge, pinned</p>
+          <p style="font-family:'Space Mono', 'Courier New', monospace; font-size:24px; line-height:1.4; color:#4A4640">pi install npm:pi-sandbox@0.7.2</p>
+          <p style="font-family:'Space Mono', 'Courier New', monospace; font-size:24px; line-height:1.4; color:#4A4640">pi install npm:pi-mtplx@0.2.0</p>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:row; gap:16px; align-items:start">
+        <p style="width:44px; height:44px; font-family:Jost, Arial, sans-serif; font-size:26px; font-weight:800; line-height:44px; text-align:center; color:#F4EDE0; background:#1D4A96; border-radius:50%">5</p>
+        <div style="flex:1; display:flex; flex-direction:column; gap:2px">
+          <p style="font-family:Jost, Arial, sans-serif; font-size:28px; font-weight:700; line-height:1.3; color:#1A1A1A">Register the model, restart, then work</p>
+          <p style="font-family:'Space Mono', 'Courier New', monospace; font-size:24px; line-height:1.4; color:#4A4640">pi, then /mtplx → Models, then /quit</p>
+          <p style="font-family:'Space Mono', 'Courier New', monospace; font-size:24px; line-height:1.4; color:#4A4640">cd my-repo &amp;&amp; pi, then /model → mtplx</p>
+        </div>
+      </div>
+    </div>
+    <div style="width:560px; display:flex; flex-direction:column; gap:16px">
+      <div style="display:flex; flex-direction:column; gap:6px; padding:18px 24px; background:#FBF8F2; border:2px solid #1A1A1A">
+        <h3 style="font-family:Jost, Arial, sans-serif; font-size:28px; font-weight:700; color:#1A1A1A">Agents: in AGENTS.md</h3>
+        <p style="font-family:Bitter, Georgia, serif; font-size:24px; line-height:1.35; color:#4A4640">Run the tests and linter before a step is done</p>
+        <p style="font-family:Bitter, Georgia, serif; font-size:24px; line-height:1.35; color:#4A4640">Keep PLAN.md current; commit each step</p>
+        <p style="font-family:Bitter, Georgia, serif; font-size:24px; line-height:1.35; color:#4A4640">Blocked by the sandbox? Stop and say so</p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:6px; padding:18px 24px; background:#FBF8F2; border:2px solid #1A1A1A">
+        <h3 style="font-family:Jost, Arial, sans-serif; font-size:28px; font-weight:700; color:#1A1A1A">System: in pi’s settings</h3>
+        <p style="font-family:'Space Mono', 'Courier New', monospace; font-size:24px; line-height:1.35; color:#4A4640">"defaultThinkingLevel": "medium"</p>
+        <p style="font-family:'Space Mono', 'Courier New', monospace; font-size:24px; line-height:1.35; color:#4A4640">"contextWindow": 131072</p>
+        <p style="font-family:'Space Mono', 'Courier New', monospace; font-size:24px; line-height:1.35; color:#4A4640">"extensions": ["-builtin:mcp"]</p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:6px; padding:18px 24px; background:#FBF8F2; border:2px solid #1A1A1A; box-shadow:4px 4px 0 #C9302C">
+        <h3 style="font-family:Jost, Arial, sans-serif; font-size:28px; font-weight:700; color:#1A1A1A">Skills: in ~/.agents/skills</h3>
+        <p style="font-family:'Space Mono', 'Courier New', monospace; font-size:24px; line-height:1.35; color:#4A4640">test-driven-development</p>
+        <p style="font-family:'Space Mono', 'Courier New', monospace; font-size:24px; line-height:1.35; color:#4A4640">verification-before-completion</p>
+        <p style="font-family:'Space Mono', 'Courier New', monospace; font-size:24px; line-height:1.35; color:#4A4640">systematic-debugging</p>
+      </div>
+    </div>
+  </div>
+  <p style="position:absolute; left:128px; bottom:64px; width:1360px; font-family:'Space Mono', 'Courier New', monospace; font-size:24px; color:#4A4640">pi-sandbox: github.com/carderne/pi-sandbox · pi-mtplx: github.com/KrossKinetic/pi-mtplx · skills: github.com/obra/superpowers</p>
+  <p style="position:absolute; right:128px; bottom:64px; width:160px; font-family:'Space Mono', 'Courier New', monospace; font-size:24px; font-weight:700; text-align:center; color:#1A1A1A; text-transform:uppercase; letter-spacing:1px">No. 02</p>
+  <aside>Here is the whole setup on one page, in the order I would do it. One: install the MTPLX Mac app from mtplx.com. It sets up its own Python engine and puts the mtplx command on your path. It also installs fan control with a passwordless sudo rule, which lets anything running as you become root, so remove that rule with the command shown. Two: download Qwen3.8-27B in MTPLX's Optimized-Speed build, about twenty gigabytes, and start the server on port 8000; the app can do both for you too. Three: install pi from npm, pinned, with ignore-scripts as its README says; it needs Node 22.19 or newer. Four: add pi-sandbox and pi-mtplx, both pinned. Five: start pi, register the model through slash mtplx, Models, quit and restart pi, then in your repository pick the model with slash model. Then the three things worth setting up first. In AGENTS.md: make the model run the tests and linter before it calls a step done, keep a PLAN.md and commit each step, and stop when the sandbox blocks it rather than look for a way round. In pi's settings: thinking on medium, the context window capped at 131 thousand in models.json, and the built-in MCP extension off, because MCP servers run outside the sandbox. And three skills from the superpowers collection: test-driven development, verification before completion and systematic debugging, copied into dot-agents slash skills. All of these were tested on pi 1.3.0 and MTPLX 2.12 in October 2026.</aside>
+</section>

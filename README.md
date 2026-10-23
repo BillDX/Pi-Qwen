@@ -8,15 +8,17 @@ The deck is *Pi on a local model: a field guide for Claude Code users* (Bill McI
 
 | # | Section | Slides |
 |---|---|---|
-| 1 | Before we start | 01 Pi on a local model · 02 What you keep, and what you trade |
-| 2 | The model | 03 Why a 27B when giants are a click away · 04 What makes Qwen3.8-27B stand out |
-| 3 | The runtime | 05 Two engines: LM Studio vs MTPLX |
-| 4 | Pi as a coding environment | 06 Pi next to Claude Code · 07 What it is like to drive |
-| 5 | Making pi safe | 08 Claude Code's safety, in four layers · 09 A host sandbox with pi-sandbox |
-| 6 | Utility | 10 Keep the always-on prompt small · 11 What I actually keep in there |
-| 7 | Customizing pi | 12 Hotrod mods: eight worth a look · 13 Four neat pi tricks |
-| 8 | Prompting smaller models | 14 Red, then green: tests drive the run · 15 Live within a smaller window · 16 Prompt habits that suit a 27B |
-| 9 | Getting started | 17 Your first evening · 18 Links worth keeping · 19 My settings and configuration · 20 Take it, change it, pass it on (license) |
+| 1 | Before we start | 01 Pi on a local model · 02 Cheat sheet: zero to a local agent · 03 What you keep, and what you trade |
+| 2 | The model | 04 Why a 27B when giants are a click away · 05 What makes Qwen3.8-27B stand out |
+| 3 | The runtime | 06 Two engines: LM Studio vs MTPLX |
+| 4 | Pi as a coding environment | 07 Pi next to Claude Code · 08 What it is like to drive |
+| 5 | Making pi safe | 09 Claude Code's safety, in four layers · 10 A host sandbox with pi-sandbox |
+| 6 | Utility | 11 Keep the always-on prompt small · 12 What I actually keep in there |
+| 7 | Customizing pi | 13 Hotrod mods: eight worth a look · 14 Four neat pi tricks |
+| 8 | Prompting smaller models | 15 Red, then green: tests drive the run · 16 Live within a smaller window · 17 Prompt habits that suit a 27B |
+| 9 | Getting started | 18 Your first evening · 19 Links worth keeping · 20 My settings and configuration · 21 Take it, change it, pass it on (license) |
+
+New to this? Start with slide 02, the cheat sheet: every install step with its command, plus the three AGENTS.md lines, settings and skills worth having on day one.
 
 ## Repository layout
 
