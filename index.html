@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pi on a local model · slides</title>
+<meta name="description" content="Workshop slides: local, sovereign AI agentic coding with the Pi coding agent and Qwen3.8-27B. CC BY-SA 4.0, Bill McIntyre.">
+<style>
+  :root { --ink: #1A1A1A; --paper: #F4EDE0; --red: #C9302C; --yellow: #F2B705; --bar: 56px; }
+  html, body { margin: 0; height: 100%; background: var(--ink); color: var(--paper); }
+  body { font-family: 'Space Mono', ui-monospace, Menlo, monospace; -webkit-font-smoothing: antialiased; }
+  button { font: inherit; color: inherit; background: none; border: 2px solid var(--paper); padding: 6px 12px; cursor: pointer; }
+  button:hover, button:focus-visible { background: var(--paper); color: var(--ink); outline: none; }
+  a.chrome { color: var(--paper); }
+
+  /* Presentation view */
+  #stage { position: fixed; inset: 0 0 var(--bar) 0; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .holder { position: relative; flex: none; overflow: hidden; }
+  .frame { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; transform-origin: 0 0; }
+  #bar { position: fixed; left: 0; right: 0; bottom: 0; height: var(--bar); display: flex; align-items: center; gap: 10px; padding: 0 16px; box-sizing: border-box; border-top: 2px solid #3a3a3a; font-size: 14px; background: var(--ink); z-index: 2; }
+  #bar .spacer { flex: 1; }
+  #count { min-width: 74px; text-align: center; letter-spacing: 1px; }
+  #title { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; opacity: .8; }
+  #bar button, #bar a { white-space: nowrap; }
+  @media (max-width: 640px) {
+    #bar { gap: 6px; padding: 0 8px; font-size: 13px; }
+    #bar button { padding: 4px 8px; }
+    #title, a.chrome { display: none; }
+    #count { min-width: 60px; }
+  }
+  #notes { position: fixed; left: 0; right: 0; bottom: var(--bar); max-height: 38vh; overflow: auto; background: #262626; border-top: 2px solid var(--yellow); padding: 16px 20px; font: 16px/1.5 Georgia, serif; display: none; box-sizing: border-box; }
+  body.show-notes #notes { display: block; }
+
+  /* All-slides view */
+  #grid { display: none; padding: 24px 16px calc(var(--bar) + 24px); box-sizing: border-box; }
+  body.grid #grid { display: grid; gap: 28px; justify-content: center; }
+  body.grid #stage, body.grid #notes { display: none; }
+  .tile { cursor: pointer; }
+  .tile .label { font-size: 13px; margin: 0 0 6px; opacity: .8; }
+  .tile:hover .holder, .tile:focus-visible .holder { outline: 3px solid var(--yellow); outline-offset: 3px; }
+  #status { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 18px; }
+
+  /* The slide canvas: defaults that approximate the Slides runtime the deck was made with */
+  .slide *, .slide *::before, .slide *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  .slide section { position: relative; width: 1920px; height: 1080px; overflow: hidden; display: flex; flex-direction: column; color: var(--ink); }
+  .slide section > aside { display: none; }
+  .slide div:not([style*="display"]) { display: flex; flex-direction: column; }
+  .slide h1 { font-size: 96px; font-weight: 600; line-height: 1.1; }
+  .slide h2 { font-size: 64px; font-weight: 600; line-height: 1.15; }
+  .slide h3 { font-size: 44px; font-weight: 600; line-height: 1.2; }
+  .slide p { font-size: 32px; line-height: 1.4; }
+  .slide ul, .slide ol { padding-left: 1.3em; }
+  .slide table { border-collapse: collapse; width: 100%; }
+  .slide td, .slide th { border: 1px solid rgba(26, 26, 26, .35); padding: .35em .6em; text-align: left; vertical-align: top; }
+  .slide th { font-weight: 700; }
+  .slide img { display: block; }
+
+  /* Print: one slide per page, full size */
+  #print { display: none; }
+  @page { size: 1920px 1080px; margin: 0; }
+  @media print {
+    html, body { background: #fff; }
+    #stage, #bar, #notes, #grid, #status { display: none !important; }
+    #print { display: block; }
+    #print .slide { width: 1920px; height: 1080px; overflow: hidden; break-after: page; }
+  }
+</style>
+</head>
+<body>
+<div id="status">Loading slides…</div>
+<main id="stage" aria-live="polite"></main>
+<section id="grid" aria-label="All slides"></section>
+<aside id="notes" aria-label="Speaker notes"></aside>
+<div id="print" aria-hidden="true"></div>
+<nav id="bar" aria-label="Slide controls">
+  <button id="prev" aria-label="Previous slide">←</button>
+  <span id="count">– / –</span>
+  <button id="next" aria-label="Next slide">→</button>
+  <span id="title"></span>
+  <span class="spacer"></span>
+  <button id="toggle-grid" aria-pressed="false" title="All slides (G)">All slides</button>
+  <button id="toggle-notes" aria-pressed="false" title="Speaker notes (N)">Notes</button>
+  <a class="chrome" href="https://github.com/BillDX/Pi-Qwen">Source</a>
+</nav>
+<script>
+(() => {
+  const DECK = 'deck/deck.json';
+  const SLIDES = 'deck/slides/';
+  const slides = [];          // { id, node (section), notes, title }
+  let index = 0;
+
+  const $ = (sel) => document.querySelector(sel);
+  const stage = $('#stage'), grid = $('#grid'), notesBox = $('#notes'), status = $('#status');
+
+  function fitScale(availW, availH) { return Math.min(availW / 1920, availH / 1080); }
+
+  function holderFor(node, scale) {
+    const holder = document.createElement('div');
+    holder.className = 'holder';
+    holder.style.width = Math.round(1920 * scale) + 'px';
+    holder.style.height = Math.round(1080 * scale) + 'px';
+    const frame = document.createElement('div');
+    frame.className = 'frame slide';
+    frame.style.transform = `scale(${scale})`;
+    frame.appendChild(node);
+    holder.appendChild(frame);
+    return holder;
+  }
+
+  function show(i, push = true) {
+    index = Math.max(0, Math.min(slides.length - 1, i));
+    const s = slides[index];
+    const scale = fitScale(stage.clientWidth, stage.clientHeight);
+    stage.replaceChildren(holderFor(s.node.cloneNode(true), scale));
+    $('#count').textContent = `${String(index + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
+    $('#title').textContent = s.title;
+    notesBox.textContent = s.notes || 'No speaker notes on this slide.';
+    document.title = index === 0 ? 'Pi on a local model · slides' : `${s.title} · Pi on a local model`;
+    if (push) history.replaceState(null, '', '#' + (index + 1));
+  }
+
+  function buildGrid() {
+    const w = Math.min(960, document.documentElement.clientWidth - 32);
+    grid.style.gridTemplateColumns = `${w}px`;
+    grid.replaceChildren(...slides.map((s, i) => {
+      const tile = document.createElement('div');
+      tile.className = 'tile';
+      tile.tabIndex = 0;
+      tile.setAttribute('role', 'button');
+      tile.setAttribute('aria-label', `Slide ${i + 1}: ${s.title}`);
+      const label = document.createElement('p');
+      label.className = 'label';
+      label.textContent = `${String(i + 1).padStart(2, '0')} · ${s.title}`;
+      tile.append(label, holderFor(s.node.cloneNode(true), w / 1920));
+      const open = () => { setGrid(false); show(i); };
+      tile.addEventListener('click', (e) => { if (!e.target.closest('a')) open(); });
+      tile.addEventListener('keydown', (e) => { if (e.key === 'Enter') open(); });
+      return tile;
+    }));
+  }
+
+  function setGrid(on) {
+    document.body.classList.toggle('grid', on);
+    $('#toggle-grid').setAttribute('aria-pressed', String(on));
+    if (on) { buildGrid(); grid.children[index]?.scrollIntoView({ block: 'center' }); } else { show(index); }
+  }
+
+  function toggleNotes() {
+    const on = !document.body.classList.contains('show-notes');
+    document.body.classList.toggle('show-notes', on);
+    $('#toggle-notes').setAttribute('aria-pressed', String(on));
+  }
+
+  function buildPrint() {
+    const box = $('#print');
+    if (box.childElementCount) return;
+    for (const s of slides) {
+      const d = document.createElement('div');
+      d.className = 'slide';
+      d.appendChild(s.node.cloneNode(true));
+      box.appendChild(d);
+    }
+  }
+
+  function parseSlide(id, html) {
+    const tpl = document.createElement('template');
+    tpl.innerHTML = html;
+    const section = tpl.content.querySelector('section');
+    if (!section) return null;
+    const base = new URL(SLIDES + id + '.html', location.href);
+    section.querySelectorAll('img[src]').forEach((img) => {
+      img.src = new URL(img.getAttribute('src'), base).href;
+    });
+    section.querySelectorAll('a[href]').forEach((a) => { a.target = '_blank'; a.rel = 'noopener'; });
+    const aside = section.querySelector(':scope > aside');
+    const heading = section.querySelector('h1, h2');
+    return {
+      id,
+      node: section,
+      notes: aside ? aside.textContent.trim() : '',
+      title: heading ? heading.textContent.replace(/\s+/g, ' ').trim() : id,
+    };
+  }
+
+  async function load() {
+    const deck = await (await fetch(DECK, { cache: 'no-cache' })).json();
+    for (const face of Object.values(deck.faces || {})) {
+      if (face.href) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = face.href;
+        document.head.appendChild(link);
+      }
+    }
+    const ids = (deck.order || []).filter((id) => /^[A-Za-z0-9_-]{1,64}$/.test(id));
+    const texts = await Promise.all(ids.map((id) =>
+      fetch(SLIDES + id + '.html', { cache: 'no-cache' }).then((r) => (r.ok ? r.text() : ''))));
+    ids.forEach((id, i) => { const s = parseSlide(id, texts[i]); if (s) slides.push(s); });
+    if (!slides.length) throw new Error('no slides');
+    status.remove();
+    const fromHash = parseInt(location.hash.slice(1), 10);
+    show(Number.isFinite(fromHash) ? fromHash - 1 : 0, false);
+    // A phone held upright gets the scrolling view; a landscape screen gets one slide at a time.
+    const portraitPhone = window.innerWidth < 700 && window.innerHeight > window.innerWidth;
+    if (portraitPhone && !Number.isFinite(fromHash)) setGrid(true);
+  }
+
+  // Controls
+  $('#prev').addEventListener('click', () => show(index - 1));
+  $('#next').addEventListener('click', () => show(index + 1));
+  $('#toggle-grid').addEventListener('click', () => setGrid(!document.body.classList.contains('grid')));
+  $('#toggle-notes').addEventListener('click', toggleNotes);
+  stage.addEventListener('click', (e) => {
+    if (e.target.closest('a')) return;
+    const r = stage.getBoundingClientRect();
+    show(e.clientX < r.left + r.width / 3 ? index - 1 : index + 1);
+  });
+  let touchX = null;
+  stage.addEventListener('touchstart', (e) => { touchX = e.touches[0].clientX; }, { passive: true });
+  stage.addEventListener('touchend', (e) => {
+    if (touchX === null) return;
+    const dx = e.changedTouches[0].clientX - touchX;
+    touchX = null;
+    if (Math.abs(dx) > 50) show(dx < 0 ? index + 1 : index - 1);
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    const k = e.key;
+    if (k === 'g' || k === 'G') return setGrid(!document.body.classList.contains('grid'));
+    if (k === 'n' || k === 'N') return toggleNotes();
+    if (k === 'f' || k === 'F') return document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen?.();
+    if (document.body.classList.contains('grid')) return;
+    if (['ArrowRight', 'PageDown', ' '].includes(k)) { e.preventDefault(); show(index + 1); }
+    else if (['ArrowLeft', 'PageUp'].includes(k)) { e.preventDefault(); show(index - 1); }
+    else if (k === 'Home') show(0);
+    else if (k === 'End') show(slides.length - 1);
+  });
+  window.addEventListener('hashchange', () => {
+    const n = parseInt(location.hash.slice(1), 10);
+    if (Number.isFinite(n) && n - 1 !== index) show(n - 1, false);
+  });
+  window.addEventListener('resize', () => {
+    if (!slides.length) return;
+    if (document.body.classList.contains('grid')) buildGrid(); else show(index, false);
+  });
+  window.addEventListener('beforeprint', buildPrint);
+
+  load().catch(() => { status.textContent = 'Could not load the slides. View the source on GitHub: github.com/BillDX/Pi-Qwen'; });
+})();
+</script>
+</body>
+</html>

@@ -2,6 +2,8 @@
 
 Slides for a workshop on **local, sovereign AI coding agents**: approaches and strategies for agentic coding with the [Pi](https://github.com/earendil-works/pi) coding agent and **Qwen3.8-27B**, running entirely on a laptop.
 
+**▶ View the slides: [billdx.github.io/Pi-Qwen](https://billdx.github.io/Pi-Qwen/)**. Use the arrow keys or click to move through them, G to see every slide, N for the speaker notes, and F for full screen. Add `#5` to the address to open slide 5. On a phone the slides scroll.
+
 The deck is *Pi on a local model: a field guide for Claude Code users* (Bill McIntyre, October 2026). It is written for developers who use Claude Code with a frontier model every day. It covers what it takes to get a 27B open-weight model to work as a coding agent, where the local setup holds up and where it doesn't, and the choices that make it as seamless as it can be.
 
 ## What the workshop covers
@@ -23,6 +25,7 @@ New to this? Start with slide 02, the cheat sheet: every install step with its c
 ## Repository layout
 
 ```
+index.html       the slide viewer published with GitHub Pages
 deck/
   deck.json        slide order, sections and fonts
   slides/<id>.html one file per slide; speaker notes are in each slide's <aside>
