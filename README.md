@@ -29,7 +29,7 @@ index.html       the slide viewer published with GitHub Pages
 deck/
   deck.json        slide order, sections and fonts
   slides/<id>.html one file per slide; speaker notes are in each slide's <aside>
-  images/          the pi screenshots used on slide 13
+  images/          the pi screenshots used on slide 14
 ```
 
 Each slide is a 1920 × 1080 HTML fragment with inline styles. The deck was built with Claude's Slides artifact and the Formwerk design system: primary inks on cream stock, with geometric shapes and print quirks. Its fonts are Jost, Bitter and Space Mono from Google Fonts.
