@@ -13,10 +13,10 @@
         <li>Reads anywhere in your home folder except the project</li>
         <li>Writes outside the project, and to .env and keys at any depth</li>
         <li>.git/hooks and .git/config, so no hook runs later on your machine</li>
-        <li>Pi’s own config, skills and MCP files, so nothing persists</li>
+        <li>Pi’s own config, skills and MCP files, so it can’t add extensions</li>
         <li>Any domain not on the list: PyPI, npm and GitHub only</li>
       </ul>
-      <p style="font-family:Bitter, Georgia, serif; font-size:26px; line-height:1.4; color:#1D4A96"><b>Upside:</b> a blocked path or domain asks you, much like a Claude Code permission prompt.</p>
+      <p style="font-family:Bitter, Georgia, serif; font-size:26px; line-height:1.4; color:#1D4A96"><b>Upside:</b> a blocked file path, or a domain named in a command, asks you, like a permission prompt. Other bash blocks just fail.</p>
       <p style="font-family:Bitter, Georgia, serif; font-size:26px; line-height:1.4; color:#B02A20"><b>Trade-off:</b> pi and its extensions run outside it. I keep extensions few and known.</p>
     </div>
     <div style="width:700px; display:flex; flex-direction:column; gap:16px">
@@ -31,7 +31,7 @@
         <p style="font-family:'Space Mono', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#4A4640"># ~/.pi/agent/sandbox.json, in part</p>
         <p style="font-family:'Space Mono', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#1A1A1A">"denyRead": ["/Users", "/Volumes"],</p>
         <p style="font-family:'Space Mono', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#1A1A1A">"allowRead": [".", "~/.gitconfig", …],</p>
-        <p style="font-family:'Space Mono', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#1A1A1A">"allowWrite": [".", "/tmp", "~/.cache/uv"],</p>
+        <p style="font-family:'Space Mono', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#1A1A1A">"allowWrite": [".", "/tmp", "~/.npm", …],</p>
         <p style="font-family:'Space Mono', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#1A1A1A">"denyWrite": [".env", "**/.env", "*.pem",</p>
         <p style="font-family:'Space Mono', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#1A1A1A">&nbsp;&nbsp;".git/hooks", ".pi/extensions", …]</p>
       </div>
@@ -39,5 +39,5 @@
   </div>
   <p style="position:absolute; bottom:64px; left:128px; width:1360px; font-family:'Space Mono', 'Courier New', monospace; font-size:24px; color:#4A4640">pi-sandbox 0.7.2 by carderne, source read in full. macOS sandbox-exec for bash, a path check for read, write and edit.</p>
   <p style="position:absolute; right:128px; bottom:64px; width:160px; font-family:'Space Mono', 'Courier New', monospace; font-size:24px; font-weight:700; text-align:center; color:#1A1A1A; text-transform:uppercase; letter-spacing:1px">No. 10</p>
-  <aside>For attended work I run pi on the host with pi-sandbox. Installing it is one pinned command, and from then on it loads with every pi session; slash sandbox shows the live policy, and slash sandbox-allow adds a domain or path without waiting for a block. It wraps every bash command in macOS sandbox-exec and checks the paths of pi's read, write and edit tools. My global config denies all of /Users and then re-allows the project and a handful of things tools need, like git config and uv's folders. It blocks writes to secrets at any depth, to the git hooks and config, so the agent cannot plant a hook that runs later on your own machine, and to pi's own config, skills and MCP files, so nothing it writes can come back in a later session. Network is an allowlist: PyPI, npm, GitHub. When something is blocked it asks you to allow it for the session, the project or globally, which is the closest thing to Claude Code's permission prompts. The trade-off: the sandbox wraps the tools, not pi itself. Pi and every extension run with your full permissions, so I keep extensions few and read every one before installing it. And I read the sandbox itself: its runtime drops some upstream protections, which is why .git/hooks and friends are spelled out here.</aside>
+  <aside>For attended work I run pi on the host with pi-sandbox. Installing it is one pinned command, and from then on it loads with every pi session; slash sandbox shows the live policy, and slash sandbox-allow adds a domain or path without waiting for a block. It wraps every bash command in macOS sandbox-exec and checks the paths of pi's read, write and edit tools. My global config denies all of /Users and then re-allows the project and a handful of things tools need, like git config and uv's folders. It blocks writes to secrets at any depth, to the git hooks and config, so the agent cannot plant a hook that runs later on your own machine, and to pi's own config, skills and MCP files, so it cannot install extensions or MCP servers that load later. It can still edit the project's AGENTS.md, so review those diffs. Network is an allowlist: PyPI, npm, GitHub. When one of pi's file tools hits a blocked path, or a command names a blocked domain, it asks you to allow it for the session, the project or globally, which is the closest thing to Claude Code's permission prompts. A bash command the operating system blocks simply fails, and the write blocks are hard blocks. The trade-off: the sandbox wraps the tools, not pi itself. Pi and every extension run with your full permissions, so I keep extensions few and read every one before installing it. And I read the sandbox itself: its runtime drops some upstream protections, which is why .git/hooks and friends are spelled out here.</aside>
 </section>

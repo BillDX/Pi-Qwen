@@ -27,14 +27,14 @@
       </div>
       <h3 style="font-family:Jost, Arial, sans-serif; font-size:34px; font-weight:700; color:#1A1A1A">What you give up</h3>
       <ul style="font-family:Bitter, Georgia, serif; font-size:28px; line-height:1.4; color:#4A4640">
-        <li>Speed: about 20 tokens a second in real agent turns (on a Macbook M3)&nbsp;</li>
-        <li>"Medium" Reasoning trims that down to 10/sec</li>
+        <li>Speed: about 20 tokens a second in real agent turns (on an M3 Max MacBook Pro)</li>
+        <li>Long sessions: about 9 a second past 64k context</li>
         <li>Build Your Own safety: pi has no permission prompts or sandbox out of the box</li>
-        <li>200k Context Window</li>
+        <li>131k window (262k max); long prompts read slowly</li>
       </ul>
     </div>
   </div>
   <p style="font-family:Bitter, Georgia, serif; font-size:32px; font-style:italic; line-height:1.35; color:#4A4640">Treat it like a capable junior on a slow connection: clear tasks, tests to check against, and a fence around it.</p>
   <p style="position:absolute; right:128px; bottom:64px; width:160px; font-family:'Space Mono', 'Courier New', monospace; font-size:24px; font-weight:700; text-align:center; color:#1A1A1A; text-transform:uppercase; letter-spacing:1px">No. 03</p>
-  <aside>Let me set expectations, because the comparison you will make is with Claude Code on a frontier model. What you gain is real: no key, no bill, so you can leave it running overnight; your code stays on the laptop; and the harness is small enough to read in an afternoon, so you understand what it is doing. What you give up is also real. Speed: in real agent turns my setup writes about twenty tokens a second, and it reads long prompts slowly. Judgement: a 27B model is good at well-scoped tasks and weaker at long, many-step ones. Safety: Claude Code ships with permission prompts and a sandbox; pi ships with neither, so you build them. And time. The rest of this talk is how I closed as much of that gap as I could. The mental model that works for me: a capable junior on a slow connection. Give it clear tasks, tests to check its own work, and a fence.</aside>
+  <aside>Let me set expectations, because the comparison you will make is with Claude Code on a frontier model. What you gain is real: no key, no bill, so you can leave it running overnight; your code stays on the laptop; and the harness is small enough to read in an afternoon, so you understand what it is doing. What you give up is also real. Speed: in real agent turns my setup writes about twenty tokens a second. In long sessions that falls to about nine once the context passes 64 thousand tokens: each step re-reads a longer cache, about half the output is reasoning, which drafts less well, and the laptop heats up. Safety: Claude Code ships with permission prompts and a sandbox; pi ships with neither, so you build them. Context: I work in a 131 thousand token window, half the model's maximum, because long prompts read slowly. And judgement: a 27B model is good at well-scoped tasks and weaker at long, many-step ones. The rest of this talk is how I closed as much of that gap as I could. The mental model that works for me: a capable junior on a slow connection. Give it clear tasks, tests to check its own work, and a fence.</aside>
 </section>
